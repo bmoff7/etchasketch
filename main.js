@@ -1,7 +1,7 @@
-function populateBoard() {
+function populateBoard(size) {
     let board = document.querySelector(".board");
-    board.style.gridTemplatesColumns = "repeat(16, 1fr)";
-    board.style.gridTemplatesRows = "repeat(16, 1fr)";
+    board.style.gridTemplatesColumns = `repeat(${size}, 1fr)`;
+    board.style.gridTemplatesRows = `repeat(${size}, 1fr)` ;
 
     for (let i = 0; i < 256; i++) {
         let square = document.createElement("div");
@@ -9,3 +9,5 @@ function populateBoard() {
         board.insertAdjacentElement("beforeend", square);
     }
 }
+
+populateBoard(16)
